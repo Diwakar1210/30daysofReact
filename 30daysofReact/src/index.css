@@ -8,3 +8,45 @@
 html,body{
     scroll-behavior: smooth;
 }
+
+.card{
+    max-width: 250px;
+    margin:10px;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 79%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%,0.1);
+    padding: 20px;
+    display: inline-block;
+}
+
+.card-image {
+    max-width: 60%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card-title{
+    margin: 0;
+    color: hsl(0, 0%, 20%);
+}
+
+.card p{
+    margin: 0;
+    color: hsl(0, 0%, 30%);
+}
+
+.welcome-message{
+    background-color: green;
+    font-size: 2.5em;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.login-prompt {
+    background-color: red;
+    font-size: 2.5em;
+    padding: 10px;
+    color: whitesmoke;
+}
