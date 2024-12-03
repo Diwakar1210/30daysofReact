@@ -5,9 +5,20 @@ import Button from "./Button.jsx";
 import Food from "./Food.jsx";
 import Students from "./Students.jsx";
 import UserGreeting from "./UserGreeting.jsx";
+import List from "./List.jsx";
 
 
 function App() {
+
+  const fruits = [{id:1,name: "apple", calories: 200},
+    {id:2,name:"orange",calories:100},
+    {id:3,name: "mango", calories:45},
+    {id:4,name: "grapes", calories:10}];
+
+    const vegetables = [{id:5,name: "potato", calories: 110},
+      {id:6,name:"onion",calories:50},
+      {id:7,name: "tomato", calories:45},
+      {id:8,name: "ginger", calories:10}];
 
   return (
     <>
@@ -28,6 +39,11 @@ function App() {
       <Students />
 
       <UserGreeting isLoggedIn={true} username="Jack"/>
+
+    {fruits.length > 0 ?  <List item={fruits} category="Fruits" /> : null}
+     
+     {vegetables.length > 0 ?  <List item={vegetables} category="Vegetables" /> : null}
+
     </>
   )
 }
