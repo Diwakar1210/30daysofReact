@@ -6,6 +6,7 @@ import Food from "./Food.jsx";
 import Students from "./Students.jsx";
 import UserGreeting from "./UserGreeting.jsx";
 import List from "./List.jsx";
+import ProfilePicture from "./ProfilePicture.jsx";
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
     {fruits.length > 0 ?  <List item={fruits} category="Fruits" /> : null}
      
      {vegetables.length > 0 ?  <List item={vegetables} category="Vegetables" /> : null}
+
+    <ProfilePicture />
 
     </>
   )
