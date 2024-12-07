@@ -7,7 +7,8 @@ import Students from "./Students.jsx";
 import UserGreeting from "./UserGreeting.jsx";
 import List from "./List.jsx";
 import ProfilePicture from "./ProfilePicture.jsx";
-
+import MyComponent from "./MyComponent.jsx";
+import Counter from "./Counter.jsx";
 
 function App() {
 
@@ -46,6 +47,10 @@ function App() {
      {vegetables.length > 0 ?  <List item={vegetables} category="Vegetables" /> : null}
 
     <ProfilePicture />
+
+    <MyComponent />
+
+    <Counter />
 
     </>
   )
