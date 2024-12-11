@@ -32,6 +32,27 @@ const MyComponent = () => {
         setGender(e.target.value)
     }
 
+    const [car,setCar] = useState({year:2024,make:"Ford",model:"Mustang"});
+    function handleyear(e){
+        setCar(c => ({...c,year:e.target.value}))
+    }
+    function handlemake(e){
+        setCar(c=>({...c,make:e.target.value}))
+    }
+    function handlemodel(e){
+        setCar(c=>({...c,model:e.target.value}))
+    }
+
+    const [food,setFood] = useState(["Apple","Banana","Mango"])
+    function handleAddFood(){
+        const newFood = document.getElementById("getItems").value;
+        document.getElementById("getItems").value = "";
+        setFood(f=>[...f,newFood])
+    }
+    function handleRemoveFood(item){
+        setFood(food.filter((_,i) => item !== i))
+    }
+
   return (
     <>
         <div>
@@ -66,6 +87,22 @@ const MyComponent = () => {
                 Female : <input type="radio" value="Female" onChange={genderReveal} checked={gender === "Female"} />
             </label>
             <p>Gender: {gender}</p>
+        </div>
+        <div>
+            <p>Your fav car is : {car.model} | {car.make} | {car.year}</p>
+
+            <input type="number" value={car.year} onChange={handleyear} />
+            <input type="text" value={car.make} onChange={handlemake} />
+            <input type="text" value={car.model}  onChange={handlemodel} />
+        </div>
+        <div>
+            <ul>
+                {food.map((food,item) =>
+                    <li key={item} onClick={()=>handleRemoveFood(item)} >{food}</li>
+                )}
+            </ul>
+            <input type="text" id="getItems" />
+            <button onClick={handleAddFood}>Add</button>
         </div>
     </>
   )
