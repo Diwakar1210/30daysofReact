@@ -25,7 +25,7 @@ const ArrayOfObjects = () => {
         setCarModel("");
     }
     function handleRemoveCars(index){
-        setCars(cars.filter((_,i)=> index !== i ));
+        setCars(c => c.filter((_,i)=> index !== i ));
     }
 
   return (

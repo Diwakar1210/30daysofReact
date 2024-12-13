@@ -8,6 +8,8 @@
 html,body{
     scroll-behavior: smooth;
     padding: 20px;
+    background-color: rgb(54, 45, 45);
+    color: whitesmoke;
 }
 
 .card{
