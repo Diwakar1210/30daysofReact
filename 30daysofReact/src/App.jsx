@@ -12,6 +12,8 @@ import Counter from "./Counter.jsx";
 import ColorPicker from "./ColorPicker.jsx";
 import ArrayOfObjects from "./ArrayOfObjects.jsx";
 import ToDoList from "./ToDoList.jsx";
+import UseEffect from "./UseEffect.jsx";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
@@ -61,6 +63,7 @@ function App() {
 
     <ToDoList/>
 
+    <UseEffect/>
     </>
   )
 }
