@@ -1,7 +1,11 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect, useContext} from 'react'
+import { UserContext } from './App';
 
 const DigitalClock = () => {
 
+    // useContext
+    let {user} = useContext( UserContext )
+    
     const [time,setTime] = useState(new Date());
     
     useEffect(()=> {
@@ -26,9 +30,17 @@ const DigitalClock = () => {
    }
 
   return (
+    <>    
     <div className='DigitalContainer'>
         <h1>{timeFormat()}</h1>
     </div>
+    <article>
+        <h1 className='fw-bold'>Context API</h1>
+        <h1>UserName : {user.uName}</h1>
+        <h1>UserAge : {user.age}</h1>
+        <h1>UserEmail : {user.email}</h1>
+    </article>
+    </>
   )
 }
 

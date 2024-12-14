@@ -15,8 +15,16 @@ import ToDoList from "./ToDoList.jsx";
 import UseEffect from "./UseEffect.jsx";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import DigitalClock from "./DigitalClock.jsx";
+import { createContext, useState } from "react";
+
+export let UserContext = createContext();
 
 function App() {
+
+  let [user,setUser] = useState({uName:"Diwakar",age:25,email:"you@awersome.com"})
+
+  console.log(UserContext);
+  
 
   const fruits = [{id:1,name: "apple", calories: 200},
     {id:2,name:"orange",calories:100},
@@ -29,6 +37,7 @@ function App() {
       {id:8,name: "ginger", calories:10}];
 
   return (
+    <UserContext.Provider value={{user}}>
     <>
       <Header />
       <Food />
@@ -68,6 +77,7 @@ function App() {
 
     <DigitalClock/>
     </>
+    </UserContext.Provider>
   )
 }
 
