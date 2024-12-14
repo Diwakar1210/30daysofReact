@@ -66,3 +66,24 @@ html,body{
     text-align: center;
     color: whitesmoke;
 }
+
+.DigitalContainer{
+    min-height: 50vh;
+    background-image: url(./assets/download.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DigitalContainer h1{
+    color: black;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    text-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.726);
+}

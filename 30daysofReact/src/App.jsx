@@ -14,6 +14,7 @@ import ArrayOfObjects from "./ArrayOfObjects.jsx";
 import ToDoList from "./ToDoList.jsx";
 import UseEffect from "./UseEffect.jsx";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import DigitalClock from "./DigitalClock.jsx";
 
 function App() {
 
@@ -64,6 +65,8 @@ function App() {
     <ToDoList/>
 
     <UseEffect/>
+
+    <DigitalClock/>
     </>
   )
 }
