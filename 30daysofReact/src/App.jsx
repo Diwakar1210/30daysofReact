@@ -16,6 +16,12 @@ import UseEffect from "./UseEffect.jsx";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import DigitalClock from "./DigitalClock.jsx";
 import { createContext, useState } from "react";
+import Login from "./Login.jsx";
+import Home from "./Home.jsx";
+import {BrowserRouter as Router , Routes, Route,Link} from 'react-router-dom';
+import Product from "./Product.jsx";
+import ProductList from "./ProductList.jsx";
+import ProductDetails from "./ProductDetails.jsx";
 
 export let UserContext = createContext();
 
@@ -24,7 +30,6 @@ function App() {
   let [user,setUser] = useState({uName:"Diwakar",age:25,email:"you@awersome.com"})
 
   console.log(UserContext);
-  
 
   const fruits = [{id:1,name: "apple", calories: 200},
     {id:2,name:"orange",calories:100},
@@ -36,10 +41,12 @@ function App() {
       {id:7,name: "tomato", calories:45},
       {id:8,name: "ginger", calories:10}];
 
+      let userName = "Diwakar";
+
   return (
     <UserContext.Provider value={{user}}>
     <>
-      <Header />
+      {/* <Header />
       <Food />
       <Card />
       <Card />
@@ -52,7 +59,6 @@ function App() {
       <Students name="Akash Adithya" age={22} isAlive={true} />
       <Students name="Shanthi" age={49} isAlive={true} />
       <Students name="Balamurugan" age={56} isAlive={true} />
-      {/* Default props */}
       <Students />
 
       <UserGreeting isLoggedIn={true} username="Jack"/>
@@ -75,7 +81,35 @@ function App() {
 
     <UseEffect/>
 
-    <DigitalClock/>
+    <DigitalClock/> */}
+   
+    <Router>
+    <ol>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+      <Link to={`/login/${userName}`}>Login</Link>
+      </li>
+      <li>
+        <Link to="/todo">To DO</Link>
+      </li>
+      <li>
+        <Link to="/products">Product</Link>
+      </li>
+    </ol>
+      <Routes>
+        <Route path="/" element={ <Home/> } />
+        {/* Route Parameter */}
+        <Route path="/login/:userName" element={ <Login/> } />
+        <Route path="/todo" element={ <ToDoList/> } />
+        <Route path="/products" element={ <Product/> }>
+          <Route index element={ <ProductList/> } />
+          <Route path="list" element={ <ProductList/> } />
+          <Route path="details" element={ <ProductDetails/> } />
+        </Route>
+      </Routes>
+    </Router>
     </>
     </UserContext.Provider>
   )
