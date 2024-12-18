@@ -44,9 +44,41 @@ function App() {
       let userName = "Diwakar";
 
   return (
-    <UserContext.Provider value={{user}}>
     <>
-      {/* <Header />
+     <nav>
+    <Router>
+    <ol>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+      <Link to={`/login/${userName}`}>Login</Link>
+      </li>
+      <li>
+        <Link to="/todo">To DO</Link>
+      </li>
+      <li>
+        <Link to="/products">Product</Link>
+      </li>
+    </ol>
+      <Routes>
+        <Route path="/" element={ <Home/> } />
+        {/* Route Parameter */}
+        <Route path="/login/:userName" element={ <Login/> } />
+        <Route path="/todo" element={ <ToDoList/> } />
+        <Route path="/products" element={ <Product/> }>
+          <Route index element={ <ProductList/> } />
+          <Route path="list" element={ <ProductList/> } />
+          <Route path="details" element={ <ProductDetails/> } />
+        </Route>
+      </Routes>
+    </Router>
+   </nav>
+   <main>
+
+    <UserContext.Provider value={{user}}>
+      
+      <Header />
       <Food />
       <Card />
       <Card />
@@ -81,37 +113,11 @@ function App() {
 
     <UseEffect/>
 
-    <DigitalClock/> */}
-   
-    <Router>
-    <ol>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-      <Link to={`/login/${userName}`}>Login</Link>
-      </li>
-      <li>
-        <Link to="/todo">To DO</Link>
-      </li>
-      <li>
-        <Link to="/products">Product</Link>
-      </li>
-    </ol>
-      <Routes>
-        <Route path="/" element={ <Home/> } />
-        {/* Route Parameter */}
-        <Route path="/login/:userName" element={ <Login/> } />
-        <Route path="/todo" element={ <ToDoList/> } />
-        <Route path="/products" element={ <Product/> }>
-          <Route index element={ <ProductList/> } />
-          <Route path="list" element={ <ProductList/> } />
-          <Route path="details" element={ <ProductDetails/> } />
-        </Route>
-      </Routes>
-    </Router>
-    </>
+    <DigitalClock/>
+
     </UserContext.Provider>
+   </main>
+    </>
   )
 }
 
